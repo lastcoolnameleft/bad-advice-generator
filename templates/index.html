@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>OpenAI Quickstart</title>
+  <title>Bad Advice Generator 2020</title>
   <link
     rel="shortcut icon"
     href="{{ url_for('static', filename='dog.png') }}"
@@ -9,11 +9,12 @@
 </head>
 
 <body>
-  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
-  <h3>Name my pet</h3>
+  <h3>Bad Advice Generator 2020</h3>
+  To start, enter a topic.  For example, "love", or "deal with an angry boss"
+  <br>
   <form action="/" method="post">
-    <input type="text" name="animal" placeholder="Enter an animal" required />
-    <input type="submit" value="Generate names" />
+    <input type="text" name="topic" placeholder="Enter a topic" required />
+    <input type="submit" value="Give me some bad advice!" />
   </form>
   {% if result %}
   <div class="result">{{ result }}</div>

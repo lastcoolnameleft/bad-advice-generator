@@ -1,0 +1,15 @@
+version: "3.4"
+services:
+
+  bad-advice-generator:
+    image: "lastcoolnameleft/bad-advice-generator:1.0"
+    container_name: advice
+    restart: always
+    volumes:
+      - ./.env:/usr/src/app/.env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.advice.rule=Host(`advice.lastcoolnameleft.com`)"
+      - "traefik.http.routers.advice.entrypoints=websecure"
+      - "traefik.http.routers.advice.tls.certresolver=myresolver"
+      - "traefik.http.services.advice.loadbalancer.server.port=8000"
