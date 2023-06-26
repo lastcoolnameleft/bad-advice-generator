@@ -5,11 +5,13 @@ services:
     image: "lastcoolnameleft/bad-advice-generator:1.0"
     container_name: advice
     restart: always
-    volumes:
-      - ./.env:/usr/src/app/.env
+    environment:
+      - FLASK_APP=${FLASK_APP}
+      - FLASK_ENV=${FLASK_ENV}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.advice.rule=Host(`advice.lastcoolnameleft.com`)"
       - "traefik.http.routers.advice.entrypoints=websecure"
       - "traefik.http.routers.advice.tls.certresolver=myresolver"
-      - "traefik.http.services.advice.loadbalancer.server.port=8000"
+      - "traefik.http.services.advice.loadbalancer.server.port=5000"

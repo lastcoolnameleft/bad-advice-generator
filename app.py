@@ -26,7 +26,7 @@ def index():
 
 
 def generate_prompt(topic):
-    return "Give me a single absurd, bad advice on " + topic
+    return "Give me a single absurd, horrible advice on " + topic
     return """Suggest three names for an animal that is a superhero.
 
 Animal: Cat
