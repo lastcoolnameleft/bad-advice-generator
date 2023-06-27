@@ -19,10 +19,12 @@ def index():
         )
         print(topic, flush=True)
         print(response, flush=True)
-        return redirect(url_for("index", result=response.choices[0].text))
+        return redirect(url_for("index", result=response.choices[0].text, topic=topic))
+    else:
+        topic = request.args.get("topic") 
 
     result = request.args.get("result")
-    return render_template("index.html", result=result)
+    return render_template("index.html", result=result, topic=topic)
 
 
 def generate_prompt(topic):
