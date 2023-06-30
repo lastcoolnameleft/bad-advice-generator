@@ -8,7 +8,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.api_base = os.getenv("OPENAI_ENDPOINT") # your endpoint should look like the following https://YOUR_RESOURCE_NAME.openai.azure.com/
 openai.api_type = 'azure'
 openai.api_version = '2023-05-15' # this may change in the future
-deployment_name = os.getenv("OPENAI_DEPLOYMENT_NAME")
+deployment_name = 'text-davinci-003'
 
 @app.route("/", methods=("GET", "POST"))
 def index():
