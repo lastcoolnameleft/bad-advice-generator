@@ -9,6 +9,7 @@ services:
       - FLASK_APP=${FLASK_APP}
       - FLASK_ENV=${FLASK_ENV}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_ENDPOINT=${OPENAI_ENDPOINT}
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.advice.rule=Host(`advice.lastcoolnameleft.com`)"
