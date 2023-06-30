@@ -18,8 +18,17 @@ flask run
 ```
 
 ### Production
+
+Setup
 ```
 # Create .env file as per .env.sample
+docker build -t lastcoolnameleft/bad-advice-generator:1.0 .
+docker compose up
+```
+
+Update
+```
+docker compose down --rmi all
 docker build -t lastcoolnameleft/bad-advice-generator:1.0 .
 docker compose up
 ```
